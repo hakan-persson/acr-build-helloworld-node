@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "digittestcluster-afbf"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "digittestcluster-afbf"
+  template:
+    metadata:
+      labels:
+        app: "digittestcluster-afbf"
+    spec:
+      containers:
+        - name: "digittestcluster-afbf"
+          image: "digitcontainerregistry.azurecr.io/digittestcluster"
+          ports:
+          - containerPort: 80
