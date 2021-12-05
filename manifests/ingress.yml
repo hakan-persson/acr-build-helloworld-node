@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "digittestcluster-afbf"
+    labels:
+        app: "digittestcluster-afbf"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: digit-test-clusterbd86-digittestcluster-afbf.33189903bad342a0b95d.swedencentral.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "digittestcluster-afbf"
+                servicePort: 80
